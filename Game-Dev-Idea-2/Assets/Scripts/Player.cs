@@ -5,7 +5,7 @@ public class Player : MonoBehaviour
 {
     public float speed = 15f;
     private Rigidbody2D rb;
-    public float mapWidth = 5f;
+    public float mapWidth = 5f;//choose how wide our map will be
 
     void Start()
     {
@@ -24,8 +24,13 @@ public class Player : MonoBehaviour
          left our current position is called rb.position*/
         Vector2 newPosition = rb.position + Vector2.right * x;
 
+        /*clamping the value of the width of the map or other world limiting the value between so
+         it doesnt go above the width ussing Mathf.Clamp with take in a value that it should limit 
+         then a minum vakue and a maximum value */
         newPosition.x = Mathf.Clamp(newPosition.x, -mapWidth, mapWidth);
 
+        /* RigitBody2D.MovePosition is basicaly moving the object to certain position and cheking for
+         for collisions along the way*/
         rb.MovePosition(newPosition);
 
     }
