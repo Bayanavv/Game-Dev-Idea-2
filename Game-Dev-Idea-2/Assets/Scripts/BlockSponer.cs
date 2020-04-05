@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class BlockSponer : MonoBehaviour
 {
-
+    /*transform is how we reference an object that we want to do some kind of position or 
+     rotation chekes with*/
     public Transform[] spwnPoints;
 
     public GameObject blockPrefab;
@@ -27,7 +28,9 @@ public class BlockSponer : MonoBehaviour
         
     }
     void SpawnBlocks()
-    {
+    {   
+        /*selecting a random spawn point
+         */
         int randomIndex = Random.Range(0, spwnPoints.Length);
 
         for (int i = 0; i < spwnPoints.Length; i++)
