@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
         Time.fixedDeltaTime = Time.fixedDeltaTime * slowness;
 
-
+        /*need to be done every time we want to load a new scene*/
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     our 2D Colider */
     void OnCollisionEnter2D ()
     {
+        /*FindObjectType allow us to call functions from enother scripts*/
         FindObjectOfType<GameManager>().EndGame();
     }
 }
