@@ -9,7 +9,7 @@ public class BlockSponer : MonoBehaviour
 
     public GameObject blockPrefab;
 
-    private float timeToSpawn = 2f;
+    private float timeToSpawn = 3f;
 
     public float timeBetweenWaves = 1f;
 
