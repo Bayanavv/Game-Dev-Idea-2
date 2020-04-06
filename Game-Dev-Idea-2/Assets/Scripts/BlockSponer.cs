@@ -9,7 +9,7 @@ public class BlockSponer : MonoBehaviour
 
     public GameObject blockPrefab;
 
-    private float timeToSpawn = 3f;
+    private float timeToSpawn = 2f; // after we start the game how long the first block will spawn
 
     public float timeBetweenWaves = 1f;
 
@@ -20,9 +20,12 @@ public class BlockSponer : MonoBehaviour
     }
     void Update()
     {
-        if(Time.time >= timeToSpawn)
+        /*Time.time unity variable that basically it is just the amounth of seconds that has passed by since we started the game*/
+        if(Time.time >= timeToSpawn) 
         {
+            /*spawing a block wave*/
             SpawnBlocks();
+            /*the time to spawn the new blockes*/
             timeToSpawn = Time.time + timeBetweenWaves;
         }
         

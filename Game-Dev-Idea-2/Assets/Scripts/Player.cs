@@ -34,6 +34,9 @@ public class Player : MonoBehaviour
         rb.MovePosition(newPosition);
 
     }
+
+    /*must be Exacly the same becose its a callBack Function means unity decidet to cod for us and its call when eve we hit some thing useing 
+    our 2D Colider */
     void OnCollisionEnter2D ()
     {
         FindObjectOfType<GameManager>().EndGame();
