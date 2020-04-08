@@ -1,15 +1,22 @@
 ﻿
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
     public float speed = 15f;
     private Rigidbody2D rb;
     public float mapWidth = 5f;//choose how wide our map will be
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    void Update()
+    {
+        
     }
    void FixedUpdate ()//running on a fixed timer
     {
