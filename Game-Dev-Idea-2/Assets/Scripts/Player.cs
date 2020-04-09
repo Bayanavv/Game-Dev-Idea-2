@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     public float speed = 15f;
     private Rigidbody2D rb;
     public float mapWidth = 5f;//choose how wide our map will be
-    public int playerHealth = 3;
 
+    public int playerHealth = 3;
     public Text healthDisplay;
     
 
@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
+        PlayerHealth();
     }
    void FixedUpdate ()//running on a fixed timer
     {
@@ -55,11 +55,12 @@ public class Player : MonoBehaviour
 
     public void PlayerHealth ()
     {
-        if(playerHealth >= 0)
+        if(playerHealth <= 0)
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
 
         healthDisplay.text = playerHealth.ToString();
+        //healthDisplay.text = playerHealth.ToString();
     }
 }
