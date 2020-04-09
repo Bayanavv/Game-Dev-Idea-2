@@ -19,13 +19,13 @@ public class Block : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D colideWithPlayer)
     {
-        if(other.CompareTag("Player"))
+        if(colideWithPlayer.CompareTag("Player"))
         {
-            other.GetComponent<Player>().playerHealth--;
-            Destroy(gameObject);
-            Debug.Log(GetComponent<Player>().playerHealth);
+            colideWithPlayer.GetComponent<Player>().playerHealth--;
+            Destroy(this.gameObject);
+
         }
     }
 }
