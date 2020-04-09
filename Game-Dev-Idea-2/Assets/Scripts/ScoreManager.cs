@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
         if(other.CompareTag("Respawn"))
         {
             score++;
-            Debug.Log(score);
+            //Debug.Log(score);
         }
     }
 }
