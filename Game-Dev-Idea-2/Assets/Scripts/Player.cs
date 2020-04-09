@@ -7,6 +7,9 @@ public class Player : MonoBehaviour
     public float speed = 15f;
     private Rigidbody2D rb;
     public float mapWidth = 5f;//choose how wide our map will be
+    public int playerHealth = 3;
+
+    public Text healthDisplay;
     
 
     void Start()
@@ -47,6 +50,16 @@ public class Player : MonoBehaviour
     void OnCollisionEnter2D ()
     {
         /*FindObjectType allow us to call functions from enother scripts*/
-        FindObjectOfType<GameManager>().EndGame();
+        //FindObjectOfType<GameManager>().EndGame();
+    }
+
+    public void PlayerHealth ()
+    {
+        if(playerHealth >= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        healthDisplay.text = playerHealth.ToString();
     }
 }
