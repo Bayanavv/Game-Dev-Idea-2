@@ -18,4 +18,13 @@ public class Block : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.CompareTag("Player"))
+        {
+            other.GetComponent<Player>().playerHealth--;
+            Destroy(gameObject);
+        }
+    }
 }
