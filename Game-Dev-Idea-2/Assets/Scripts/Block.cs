@@ -25,6 +25,7 @@ public class Block : MonoBehaviour
         {
             other.GetComponent<Player>().playerHealth--;
             Destroy(gameObject);
+            Debug.Log(GetComponent<Player>().playerHealth);
         }
     }
 }
