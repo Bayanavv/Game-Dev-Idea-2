@@ -10,26 +10,38 @@ public class Player : MonoBehaviour
 
     public int playerHealth = 3;
     public Text healthDisplay;
+
+    public Animator camAnim;
     
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        camAnim = GetComponent<Animator>();
     }
 
     void Update()
     {
         PlayerHealth();
         healthDisplay.text = playerHealth.ToString();
-
+        
     }
    void FixedUpdate ()//running on a fixed timer
+    {
+        PlayerController();
+    }
+
+    /*must be Exacly the same becose its a callBack Function means unity decidet to cod for us and its call when eve we hit some thing useing 
+    our 2D Colider */
+    
+    
+    public void PlayerController()
     {
         /*moving left and right and all ways when doing movment multiply with Time.fixedDeltaTime becouse we insie
          *od fixedUpdate with is the amount of time passed since our last fixed update was called and there for
          *it will make it independet on whatever are fixedDeltaTime  its running and then we will have a speed veriable*/
         float x = Input.GetAxis("Horizontal") * Time.fixedDeltaTime * speed;
-        
+
         /*vector2 2 demensial that cheking for colisions and moving to a new position 
          *usfull thing is the position that we want to move to is our current position plus some
          *x value so we want to move to our current position either bit to the right or a bit to 
@@ -44,16 +56,7 @@ public class Player : MonoBehaviour
         /* RigitBody2D.MovePosition is basicaly moving the object to certain position and cheking for
          for collisions along the way*/
         rb.MovePosition(newPosition);
-
     }
-
-    /*must be Exacly the same becose its a callBack Function means unity decidet to cod for us and its call when eve we hit some thing useing 
-    our 2D Colider */
-    void OnCollisionEnter2D ()
-    {
-        
-    }
-
     public void PlayerHealth ()
     {
         if(playerHealth <= 0)
