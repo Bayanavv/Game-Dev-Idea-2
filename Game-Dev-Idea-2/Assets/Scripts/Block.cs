@@ -24,6 +24,7 @@ public class Block : MonoBehaviour
         if(colideWithPlayer.CompareTag("Player"))
         {
             colideWithPlayer.GetComponent<Player>().playerHealth--;
+            colideWithPlayer.GetComponent<Player>().camAnim.SetTrigger("Shake");
             Destroy(this.gameObject);
 
         }
